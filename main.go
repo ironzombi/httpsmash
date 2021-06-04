@@ -22,6 +22,7 @@ func main() {
         }
         url = os.Args[1]
         smash, _ = strconv.Atoi(os.Args[2])
+        // TODO: make this optional - insecure by design...
         http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
         go timer()
         for i := 0; i < smash; i++ {
